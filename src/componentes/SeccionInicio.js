@@ -21,9 +21,12 @@ export default function SeccionInicio({slider}){
               setActiva(posActiva => posActiva === longitud - 1 ? 0 : posActiva + 1);
         }, 4800);
         console.log("salio");
+        //antes de volver a ejecutar el set interval de nuevo, limpia todo asi evita consumir mas memoria
         return ()=> clearInterval(intervalo);
 
     },[activa, longitud]);
+
+
 
     return(
         <section className='contenedorSection'>

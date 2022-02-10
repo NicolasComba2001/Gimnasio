@@ -1,5 +1,16 @@
 
-header{position: relative; width: 100vw;}
+//variables
+$colorLetra: #ffff;
+
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 200;
+    }
 
 @mixin cajas-flex($justify, $align, $direction) {
     display: flex;
@@ -10,4 +21,168 @@ header{position: relative; width: 100vw;}
 
 .header{
     @include cajas-flex(space-between, center, row);
+    height: 70px;
+        &__logo{
+            z-index: 100;
+            color: red;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 1.3em;
+            text-decoration: underline;
+            padding: 10px;
+        }
+        &__icono{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            @include cajas-flex(center, center ,column);
+            transition: all .5s ease-in-out;
+            cursor: pointer;
+                &--abrirMenu{
+                    width: 40px;
+                    height: 3px;
+                    background-color: rgba(255, 0, 0, 0.562);
+                     border-radius: 5px;
+                     transition: all .5s ease-in-out;
+                }
+        }
+}
+    
+.header__icono--abrirMenu::before,
+.header__icono--abrirMenu::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: rgba(255, 0, 0, 0.562);
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+.header__icono--abrirMenu::before{
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+.header__icono--abrirMenu::after{
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+}
+.header__icono.estiloIcono .header__icono--abrirMenu{
+    transform: translateX(-50px);
+    background-color: transparent;
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    -o-transform: translateX(-50px);
+}
+.header__icono.estiloIcono .header__icono--abrirMenu::before{
+    transform: rotate(45deg) translate(35px, -35px);
+    -webkit-transform: rotate(45deg) translate(35px, -35px);
+    -moz-transform: rotate(45deg) translate(35px, -35px);
+    -ms-transform: rotate(45deg) translate(35px, -35px);
+    -o-transform: rotate(45deg) translate(35px, -35px);
+}.header__icono.estiloIcono .header__icono--abrirMenu::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+    -webkit-transform: rotate(-45deg) translate(35px, 35px);
+    -moz-transform: rotate(-45deg) translate(35px, 35px);
+    -ms-transform: rotate(-45deg) translate(35px, 35px);
+    -o-transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menu{
+        @include cajas-flex(center,center,row);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.87);
+    transition: transform 1s ease-out;
+    transform:translateX(100%);
+    -webkit-transform:translateX(100%);
+    -moz-transform:translateX(100%);
+    -ms-transform:translateX(100%);
+    -o-transform:translateX(100%);
+    -webkit-transition: transform 1s ease-out;
+    -moz-transition: transform 1s ease-out;
+    -ms-transition: transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+}
+.menuItems{
+    @include cajas-flex(space-between, center , column );
+    list-style: none;
+    &__btn a{
+        position: relative;
+        display: block;
+        transition: 0.4s;
+        font-size: 2.5em;
+        line-height: 3;
+        color: $colorLetra;
+        text-decoration: none;
+        text-align: center;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -ms-transition: 0.4s;
+        -o-transition: 0.4s;
+        font-weight: 800;
+        &:hover{
+            color: rgba(255, 5, 5, 0.1);
+        }
+        &:hover::before{
+            opacity: 1;
+            transition: opacity .7s ease-in;
+            -webkit-transition: opacity .7s ease-in;
+            -moz-transition: opacity .7s ease-in;
+            -ms-transition: opacity .7s ease-in;
+            -o-transition: opacity .7s ease-in;
+    }
+}
+    
+}
+
+.menuItems__btn > a::before{
+            content: attr(data-text);
+            position: absolute;
+            font-size: .35em;
+            color: #03f0f8;
+            text-shadow: 0 0 10px #ffffff00,            0 0 30px #0defff,            0 0 80px #0de1fd;
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity .7s ease-out;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            -webkit-transition: opacity .7s ease-out;
+            -moz-transition: opacity .7s ease-out;
+            -ms-transition: opacity .7s ease-out;
+            -o-transition: opacity .7s ease-out;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+}
+
+.menuAbrir{
+    transition: transform 1s ease-out;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transition: transform 1s ease-out;
+    -moz-transition: transform 1s ease-out;
+    -ms-transition: transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
 }

@@ -1,0 +1,68 @@
+
+//
+@mixin cajas-flexibles($justyfi, $align, $direction) {
+    display: flex;
+    justify-content: $justyfi;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+.contenedorSection{
+    z-index: 40;
+    position: relative;
+}
+.contenedorImagen{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+.contenedorSlide{
+    transition: 0.7s ease-out;
+    -webkit-transition: 0.7s ease-out;
+    -moz-transition: 0.7s ease-out;
+    -ms-transition: 0.7s ease-out;
+    -o-transition: 0.7s ease-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    &__img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+}
+
+
+.contenedorTexto{
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include cajas-flexibles(center,center ,column);
+        &__titulo{
+            font-size: 2em;
+            color: rgb(255, 255, 255);
+            font-weight: 800;
+            text-shadow: 3px 8px 3px #000;
+        }
+        &__frase{
+            color: rgb(11, 255, 24);
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+}
+
+.activarSlide{
+    opacity: 1;
+    transition: opacity .7s ease-out;
+    -webkit-transition: opacity .7s ease-out;
+    -moz-transition: opacity .7s ease-out;
+    -ms-transition: opacity .7s ease-out;
+    -o-transition: opacity .7s ease-out;
+}

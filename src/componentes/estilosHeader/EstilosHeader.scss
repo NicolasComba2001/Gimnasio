@@ -1,0 +1,13 @@
+
+header{position: relative; width: 100vw;}
+
+@mixin cajas-flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+.header{
+    @include cajas-flex(space-between, center, row);
+}

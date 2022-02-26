@@ -1,5 +1,4 @@
  .contenedorCarta{
-     background-color: rgba(19, 24, 27, 0.904);
      padding: 40px;
  }
 .carta{
@@ -8,7 +7,6 @@
     height: 350px;
     position: relative;
     margin:  auto;
-    z-index: 90;
     box-shadow: 30px 23px 6px -7px rgba(14, 13, 13, 0.925);
 -webkit-box-shadow: 30px 23px 6px -7px rgba(14, 13, 13, 0.925);
 -moz-box-shadow: 30px 23px 6px -7px rgba(14, 13, 13, 0.925);
@@ -54,14 +52,15 @@ border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.575);
+            color: rgb(255, 255, 255);
         &__info{
-            
-            color: #fff;
-            font-size: 1.1em;
+            font-size: 1.2em;
             font-weight: 600;
             text-align: center;
         }
-        &__btn> button{
+        &__btn > button{
                 background-color: rgb(255, 0, 0);
                 border: none;
                 width: 120px;
@@ -73,8 +72,10 @@ border-radius: 20px;
                 -o-border-radius: 5px;
                 color: #fff;
                 font-weight: 750;
+                cursor: pointer;
     }
 }
+
 .modal{
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.589);
@@ -83,7 +84,7 @@ border-radius: 20px;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 80;
+    z-index: -1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +94,7 @@ border-radius: 20px;
             overflow: hidden;
             position: relative;
             width: 350px;
-            height: 360px;
+            height: 520px;
             background-color: #fff;
             text-align: center;
             border-radius: 5px;
@@ -127,11 +128,19 @@ border-radius: 20px;
                     list-style: none;
                     text-align: center;
                     padding: 0;
-                        li{line-height: 2;}
+                    font-size: 18px;
+                        li{line-height: 2; margin: 20px 0;}
                 }
             }
+    }.modalInfo.brillante{
+        background: #ffb347;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffcc33, #ffb347);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffcc33, #ffb347); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
     }
        .modalBtn__btn{
+        cursor: pointer;
            font-size: 1.2em;
         background-color: rgb(255, 0, 0);
         border: none;
@@ -146,6 +155,7 @@ border-radius: 20px;
         font-weight: 750;
        }
     .modalCerrar{
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -170,5 +180,8 @@ border-radius: 20px;
     -moz-transition: opacity .6s ease-out;
     -ms-transition: opacity .6s ease-out;
     -o-transition: opacity .6s ease-out;
+   
 }
+.modalIcons{ margin-right: 5px;}
+
 

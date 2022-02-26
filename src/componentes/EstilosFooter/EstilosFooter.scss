@@ -1,0 +1,66 @@
+@mixin caja-flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+.footerInfo{
+    @include caja-flex(center, center ,column );
+    width: 100%
+}
+.footer{
+    @include caja-flex(center,flex-start ,column );
+    background-color: rgba(0, 4, 5, 0.91);
+    border-top:5px solid rgb(255, 0, 0);
+    margin-top: 15px;
+}
+.footerList{list-style: none;  padding: 10px; 
+&__titulo{color: rgb(245, 16, 16); text-decoration: underline;}}
+.Fcontact{
+    margin: 5px;
+    &__items{
+        cursor: pointer;
+        color: white;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 2;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+            color: red;
+        }
+    }
+}.copy{font-size: 12px; text-align: center; color: #fff;  margin:10px auto;}
+.FredesSociales{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.FlogoCentral{
+    text-align: center;
+    color:red;
+    font-weight: 800;
+    font-size: 2em;
+    margin: auto;
+    text-decoration: underline;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.FredSocial{
+    display: flex;
+    flex-direction: column;
+   
+        &__img{width: 100%; height: 100%; object-fit: cover;}
+}
+.FredSocial > a{
+    width: 60px;
+    height:60px;
+    display: block;
+}
+
+.footerIcons{
+    font-size: 17px;
+    margin-right: 10px;
+
+}

@@ -1,73 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './estilosCartasMembresia/EstilosCartasMembresia.scss';
+import ModalMembresia from './ModalMembresia';
+import VanillaTilt from 'vanilla-tilt';
 
 
-export default function CartasMembresia({src, alt, mensaje, beneficios}){
 
-    
+export default function CartasMembresia({src, alt, mensaje, beneficios, textoCarta, precioCarta, titulo}){
+
+    function Tilt({options}){
+        const contTilt = useRef(null);
+        
+        useEffect(()=>{
+            VanillaTilt.init(contTilt.current, options);
+            
+        },[options])
+
+            return <section ref={contTilt} className='carta'  data-aos="zoom-in">
+                            <img className='carta__img box' src={src} alt={alt} />
+                    <div className='carta__precio'><span>{precioCarta}</span></div>
+                    <div className='btnYinfo'>
+                        <p className='btnYinfo__info'>{textoCarta}</p>
+                        <div className='btnYinfo__btn'>
+                            <button ref={refBtnModal}  onClick={abrirModal}>{mensaje}</button>
+                        </div>
+                    </div>
+                    </section>
+    }
    
     const [modal, setModal] = useState(false);
+    const refBtnModal = useRef();
     
-    let banderauno = false;
-    
-
-    function abrirModal(e){
-        if(e.target.innerHTML === "INSCRIBETE YA!"){banderauno = true;
-                                                    setModal(!modal);}
-        else if (e.target.innerHTML === "DESCARGA YA!"){
-                                                         setModal(!modal);}
-        else setModal(!modal);
+    function abrirModal(){
+        setModal(!modal);
         
     }
 
+    const options ={
+        scale: 1,
+        speed: 300,
+        max: 20
+    }
+
+    
+
     return(
-        <section className='contenedorCarta'>
-                <section className='carta'>
-                    <img className='carta__img' src={src} alt={alt} />
-                    <div className='carta__precio'><span>$50</span></div>
-                    <div className='btnYinfo'>
-                        <p className='btnYinfo__info'>Inscribete para recibir los mejores entrenamientos de la mano de nuestros mejores personal trainers</p>
-                        <div className='btnYinfo__btn'>
-                            <button onClick={abrirModal}>{mensaje}</button>
-                        </div>
-                    </div>
-                </section>
+        <section className='contenedorCarta' >
         
-                
-                <ModalMembresia EstadoModal={modal} estado={banderauno === true ? beneficios : beneficios} funcion={abrirModal}></ModalMembresia>
-                
-                
+        <Tilt options={options}> </Tilt>
+
+                <ModalMembresia titulo={titulo} EstadoModal={modal} mensaje={mensaje} beneficios={beneficios} funcion={abrirModal}></ModalMembresia> 
+    
         </section>  
 
     );
 }
-  function ModalMembresia({EstadoModal, funcion, estado}){
-
-    
-     return(
-         <div className={`modal ${EstadoModal ? "modalActivo" : ""}`}>
-             <div className={`modalInfo ${EstadoModal ? "mostrarInfo" : ""}`}>
-               
-                 <h3 className='modalInfo__titulo'>INSCRIPCION V.I.P</h3>
-                 <ul className='modalInfo__beneficios'>
-                    {
-                        estado.map((elemento, index)=>{
-                            return(
-                                <li key={index}>{elemento.titulo}</li>
-                            );
-                        })
-                    }
-                    
-
-                    
-                 </ul>
-                 <div className='modalBtn'>
-                             <button className='modalBtn__btn'>INSCRIBTE!</button>
-                 </div>
-
-                 <div className='modalCerrar' onClick={funcion}>X</div>
-             </div>
-         </div>
-     )
- }
-
+ 

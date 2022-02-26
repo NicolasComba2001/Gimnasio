@@ -28,5 +28,10 @@ export const imagenesGimnasio = [
         src: "https://images.pexels.com/photos/5935969/pexels-photo-5935969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         alt: "Gimnasio por dentro, habitacion de Baile",
         desc: "AREA DE BAILE - jueves (18 p.m)",
-    }
+    },
+    {
+        src: "https://images.pexels.com/photos/7195811/pexels-photo-7195811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        alt: "Gimnasio por dentro, habitacion de Spa",
+        desc: "AREA DE SPA - sabado & domingo (20 p.m a 23 p.m)",
+    },
 ];

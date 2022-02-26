@@ -7,12 +7,9 @@
         }
         &__info{
             color: gray;
-            font-size: 1em;
+            font-size: 1.1em;
             font-weight: 600;
             padding: 10px;
+                &--rojo{color: rgb(243, 7, 7); font-style: italic;}
         }
-}
-.contenedorInfo__cartas{
-    border-top: 4px solid orange;
-    border-bottom: 4px solid orange;
 }

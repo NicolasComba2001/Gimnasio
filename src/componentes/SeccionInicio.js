@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './EstilosSeccionInicio/EstilosSlider.scss';
 
 
+
 function ContenedorTexto(){
+
     return(
         <div className='contenedorTexto'>
-            <h1 className='contenedorTexto__titulo'>FITNESS SPORT CLUB</h1>
-            <p className='contenedorTexto__frase'>PELEA POR TI</p>
+            <h1 className='contenedorTexto__titulo' data-aos="fade-left">FITNESS <span className='titulo--naranja'>SPORT</span> CLUB</h1>
+            <p className='contenedorTexto__frase' data-aos="fade-right">ENTRENAMIENTO DE CALIDAD DESDE <span className='contenedorTexto__frase--rojo' data-aos="fade-up"
+                                                                                                                                                      data-aos-delay="1000">U$D 20</span></p>
+           <button className='contenedorTexto__turno' data-aos="fade-up">SACA TU TURNO!</button>
+
+            
         </div>
     );
 }
@@ -28,7 +34,7 @@ export default function SeccionInicio({slider}){
 
 
     return(
-        <section className='contenedorSection'>
+        <section className='contenedorSection' id='Inicio'>
             <figure className='contenedorImagen'>
                 {slider.map((elemento,index)=>{
                    return (

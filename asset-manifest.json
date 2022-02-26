@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Gimnasio/static/css/main.a26703fc.css",
+    "main.js": "/Gimnasio/static/js/main.9c400d96.js",
+    "static/js/787.fbb913cb.chunk.js": "/Gimnasio/static/js/787.fbb913cb.chunk.js",
+    "index.html": "/Gimnasio/index.html",
+    "main.a26703fc.css.map": "/Gimnasio/static/css/main.a26703fc.css.map",
+    "main.9c400d96.js.map": "/Gimnasio/static/js/main.9c400d96.js.map",
+    "787.fbb913cb.chunk.js.map": "/Gimnasio/static/js/787.fbb913cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a26703fc.css",
+    "static/js/main.9c400d96.js"
+  ]
+}

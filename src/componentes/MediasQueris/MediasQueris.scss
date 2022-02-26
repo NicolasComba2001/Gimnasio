@@ -29,6 +29,10 @@
 }
 
 @media screen and(min-width: 1280px) {
+    .contenedorGimnasio__informacion, .gimnasioLista{font-size: 1em;}
+    .contenedorTexto__titulo{font-size: 2.5em;}
+    .gimnasioLista{font-size: 1.1em;}
+    .contenedorTexto__turno{font-size: 1.5em;}
     .header__logo{font-size: 2em;}
     .tipoRutina__btn{width: 140px; height: 40px;}
     .tipoRutina{bottom: 5%;}
@@ -36,6 +40,30 @@
     .rutinaTexto{width: 50%;}
     .descripcionArea{height: 50px; font-size: 1.1em;}
     .infogim-flex{display: flex; padding: 15px;}
-    .sliderGimnasio{height: 500px;}
+    .sliderGimnasio{height: 400px; width: 50%;}
     .contenedorInfo__cartas{width: 50%;}
+    .header__icono{display: none;}
+    .menu{
+        position: relative;
+        width: 60%;
+        background-color: transparent;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        margin-right: 20px;
+        height: 0;
+    }.menuItems{
+        justify-content: space-around;
+        width: 100%;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        flex-direction: row;
+        &__btn > a{font-size: 1.4em;}
+    }
+    .menuItems__btn > a::before{font-size: .80em;}
 }
